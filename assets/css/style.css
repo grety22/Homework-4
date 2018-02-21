@@ -1,0 +1,141 @@
+html, body {
+    background-color: #2f3542; 
+    color: white;
+}
+
+.sidebar {
+    background-color: #d45053;
+    height: 100vh !important;
+/*    box-shadow: 0px 50px 0px 50px #2f3542 inset;*/
+}
+
+.a {
+    border-radius: 0 !important;
+    background-color: #b2acac;
+    text-align: center;
+    color: #2f3542;
+    font-size: 1.7em;
+    line-height: 100%;
+    font-weight: bold; 
+    margin-top: 0 !important;
+    border: 2px solid #2f3542;
+}
+
+.b {
+    background-color: #2f3542;
+    color: #d45053;
+    height: 50px;
+    margin-top: 0;
+    border-radius: 0 !important;
+}
+
+.c {
+   margin-top: 10px !important;
+   width: 150px !important; 
+}
+
+.d {
+    font-size: 1.5em;
+    line-height: 100%;
+    font-weight: bold;        
+}
+
+.bg {
+    background-color: #343b48;
+    height: 25%;
+    margin-top: 3.5%;
+}
+
+/*circle*/
+.icon{
+    
+    background-size: 125px 125px;
+/*    margin: auto; */
+    -webkit-box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.2),
+    inset 0 0 0 15px   rgba(255,255,255,.2);
+    -moz-box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.2),
+    inset 0 0 0 15px   rgba(255,255,255,.2);
+    box-shadow: 
+      0 0 0 10px   rgba(255,255,255,.2),
+      0 0 25px 2px rgba(0,0,0,.2),
+    inset 0 0 0 15px   rgba(255,255,255,.2);
+    -webkit-border-radius: 999px; 
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.i0 {
+    background: url("../img/batman.png")  no-repeat;
+    background-color: #3498db; 
+    width: 125px;
+    height: 125px;
+    background-size: 125px 125px;
+}
+.i1 {
+    background: url("../img/hulk.png")  no-repeat;
+    background-color: #2ecc71;
+    width: 125px;
+    height: 125px;
+    background-size: 125px 125px;
+}
+.i2 {
+    background: url("../img/spiderman.png")  no-repeat;
+    background-color: #f1c40f; 
+    width: 125px;
+    height: 125px;
+    background-size: 125px 125px;
+}
+.i3 {
+    background: url("../img/captain-america.png")  no-repeat;
+    background-color: #e74c3c;   
+    width: 125px;
+    height: 125px;
+    background-size: 125px 125px;
+}
+
+.g {
+    width: 70%;
+    height: auto;
+}
+
+#spanShow {
+    font-size: 1.3em;
+    color: #d45053;
+}
+
+#spanShowName {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+#spanShow2 {
+    font-size: 1.3em;
+    color: #d45053;
+}
+
+#spanShowName2 {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opaNoPointer {
+    filter: grayscale(100%);
+    cursor: default;
+}
+
+.head {
+    color: #2f3542;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sp {
+     font-weight: bold;       
+
+}

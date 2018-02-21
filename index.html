@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jquery HMW</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- custom css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- anime css-->
+    <link rel="stylesheet" href="assets/css/animate.css"> 
+
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+            <!-- SIDEBAR-->
+                <div class="container sidebar">
+                    <!-- LOGO -->
+                    <img class="img-fluid " src="assets/img/logo.png">
+                    <!-- Health Points-->
+                    <div class="row">
+                            <div class="container c ">
+                               <div class="row">
+                                    <div class="head col-6 align-items-center">PLAYER</div> 
+                                    <div class="head col-6 align-items-center">ENEMY</div>     
+                                </div>
+                                <div class="row">
+                                    <div class="sp col-6 align-items-center"><span>HP</span></div> 
+                                    <div class="sp col-6 align-items-center"><span>HP</span></div>     
+                                </div> 
+                                <div class="row">
+                                    <div class="col-6 align-items-center"><span id="HPplayer">0</span></div> 
+                                    <div class="col-6 align-items-center"><span id="HPenemy">0</span></div>     
+                                </div>
+                            </div>    
+                    </div>
+                    <!-- Counter Attack Power-->
+                    <div class="row">
+                            <div class="container c ">
+<!--
+                               <div class="row">
+                                    <div class="head col-6 align-items-center">PLAYER</div> 
+                                    <div class="head col-6 align-items-center">ENEMY</div>     
+                                </div>
+-->
+                                <div class="row">
+                                    <div class="sp col-6 align-items-center"><span>CAP</span></div> 
+                                    <div class="sp col-6 align-items-center"><span>CAP</span></div>     
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 align-items-center"><span id="CAPplayer">0</span></div> 
+                                    <div class="col-6 align-items-center"><span id="CAPenemy">0</span></div>     
+                                </div>
+                            </div>           
+                    </div>
+                    <!-- Attack Power-->
+                    <div class="row">
+                            <div class="container c ">
+                               
+                                <div class="row">
+                                    <div class="sp col-6 align-items-center"><span>AP</span></div> 
+                                    <div class="sp col-6 align-items-center"><span>AP</span></div>     
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 align-items-center"><span id="APplayer">0</span></div> 
+                                    <div  class="col-6 align-items-center"><span id="APenemy">0</span></div>     
+                                </div>
+                            </div>    
+                    </div>
+                </div>    
+
+            </div>
+            <div class="col-10">
+<!--               characters area-->
+                <div id="chooseCha" class="row bg">
+                        <div class="col-2 d-flex align-items-center">
+                            <span>Choose Character Area</span>
+                        </div> 
+<!--                        character 1 -->
+                        <div id="i0c" class="col-2 d-flex align-items-center">
+                            <div id="i0" class="icon i0 animated bounce"></div>
+                        </div> 
+<!--                        character 2 -->
+                        <div id="i1c" class="col-2 d-flex align-items-center">
+                            <div id="i1" class="icon i1 animated bounce"></div>
+                        </div>
+<!--                        character 3    -->
+                        <div id="i2c" class="col-2 d-flex align-items-center">
+                            <div id="i2" class="icon i2  animated bounce"></div>
+                        </div>
+<!--                        character 4    -->
+                        <div id="i3c" class="col-2 d-flex align-items-center">
+                            <div id="i3" class="icon i3  animated bounce" ></div>
+                        </div>
+                        <div class="col-2 d-flex align-items-center">
+                            <span id="spanShow" class="invisible">NOW YOU WILL BE PLAYING AS <span id="spanShowName"></span></span>
+                        </div>    
+                </div>
+<!--                choose enemy area  -->
+                <div id="enemiesArea" class="row bg">
+                       <div class="col-2 d-flex align-items-center">
+                            <span>Choose Enemy Area</span>
+                       </div>      
+                </div>
+<!--                fighting area  -->
+                <div id="fightingArea" class="row bg" style="text-align: center">
+                        <div id="textF" class="col-2 d-flex align-items-center">
+                            <span>Fighting Area</span>
+                        </div> 
+                        
+                </div>
+        </div>
+    </div>
+    
+   
+    
+    <!-- choosed character modal-->
+    
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">You have selected</span>
+                </button>
+              </div>
+       </div>
+      </div>
+    </div>
+    </div>
+   <script src="http://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    
+    <!-- jQuery first, then Tether, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+    <!-- my effects-->
+    <!-- <script src="assets/js/forDesign.js"></script>    -->
+    <!--     custom script-->
+<!--    <script src="assets/js/script.js"></script>  -->
+    <script src="assets/js/test.js"></script>  
+  </body>
+</html>

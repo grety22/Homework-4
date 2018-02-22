@@ -3,6 +3,7 @@ $(document).ready(function(){
     
 var enemiesAlready = new Array;
 var currentPlayer = {};
+var currentEnemy = {};
 var clickedID = ''; 
 var state = false;
 var state2 = false;
@@ -65,7 +66,6 @@ function startGame(event){
     hideOtherCharacters();
     showSpan();
     attack();
-        
 };
 
 function attack(){
@@ -79,11 +79,10 @@ function attack(){
             
         if (playerHP <= 0){
 //             you lose
-            alert('you lose :(');
             youLose();
         }else if(enemyHP <= 0){
 //             you win
-            alert('you win :)');
+            youWin();
         }else{
              $('#HPenemy').text(rest);
              playerCAP++;
@@ -94,16 +93,33 @@ function attack(){
 });
     
 }
+    
+function youWin(){
+    $('#myModalWin').modal('show');
+    enemiesAlready.push(currentEnemy.id);
+    alert(enemiesAlready);
+    $('#fightingArea').children('.col-2').eq(3).remove();
+    $('#fightingArea').children('.col-2').eq(2).hide();
+    toggleEnemies();
+    reselectEnemy();
+}
 
+function  reselectEnemy(){
+}
+    
+function toggleEnemies(){
+    for (var i=1; i<4; i++){
+        $('#enemiesArea').children('.col-2').eq(i).toggleClass('opaNoPointer');    
+    }
+}
+    
 function youLose(){
     $('#fightingArea').children('.col-2').eq(3).remove();
-//    alert($('#fightingArea').children(1).text());
     $('#HPenemy').text('0');
     $('#HPplayer').text(currentPlayer.hp);
     $('#APenemy').text('0');
     $('#CAPenemy').text('0');
     $('#enemiesArea').children('.col-2').eq(2).remove();
-//    $('#myModal').modal('show'); 
     $('#myModal').modal('show');
 
 }
@@ -148,7 +164,16 @@ function disableCharactersClick(){
     $('#i0, #i1, #i2, #i3').off();    
 }    
     
-
+function setCharacters(b,c,place){
+  state = true;
+  var mainDiv = $(c);
+  var mainDivClon = mainDiv.clone(true, true); 
+  var circle = mainDivClon.find(b);
+  mainDivClon.appendTo(place);     
+  circle.removeClass('opaNoPointer');
+  circle.attr("id",b+"j"); 
+    
+} 
     
 function getIDwhenClick(event){
     clickedID = event.target.id;
@@ -185,6 +210,8 @@ function clickChooseEnemy(){
                     var withShar = '#i'+j+'c';
                     var fightArea = "#fightingArea";
                     selectEnemy(IDshar,withShar,fightArea);
+                    currentEnemy = character[j];
+                    alert('You enemy is ' +currentEnemy.name);
                 }else{
                     hideEnemiesNonSelected(j); 
                 }
@@ -192,18 +219,14 @@ function clickChooseEnemy(){
     }
 }
 
-    
 function hideOtherCharacters(c){
     if (state === false){
         showValuesPlayer();
         clickChoosePlayer();
     }else{
         clickChooseEnemy();
-       
     }
 }
-    
-   
 
 function hideEnemiesNonSelected(c){
     var toHide = $("#enemiesArea").children().eq(c);
@@ -225,11 +248,6 @@ function selectEnemy(b,c,place){
       circle.removeClass('opaNoPointer');
       circle.attr("id",b+"a"); 
 }    
-    
-    
-function disableCreated(){
-    $('#i1j, #i2j, #i3j').off('click');  
-}
 
 function showSpan(){
     getCharacterName();
@@ -248,19 +266,10 @@ function getCharacterName(){
 };
     
     
-function setCharacters(b,c,place){
-  state = true;
-  var mainDiv = $(c);
-  var mainDivClon = mainDiv.clone(true, true); 
-  var circle = mainDivClon.find(b);
-  mainDivClon.appendTo(place);     
-  circle.removeClass('opaNoPointer');
-  circle.attr("id",b+"j"); 
-  disableCreated();
-    
-} 
+
     
  
     
     
 });
+

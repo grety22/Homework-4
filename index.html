@@ -23,11 +23,11 @@
                     <!-- LOGO -->
                     <img class="img-fluid " src="assets/img/logo.png">
                     <!-- Health Points-->
-                    <div class="row">
-                            <div class="container c ">
+                    <div class="row l">
+                            <div class="container c">
                                <div class="row">
-                                    <div class="head col-6 align-items-center">PLAYER</div> 
-                                    <div class="head col-6 align-items-center">ENEMY</div>     
+                                    <div class="head align-items-center col-6 "><span>PLAYER</span></div> 
+                                    <div class="head align-items-center col-6 "><span>ENEMY</span></div>     
                                 </div>
                                 <div class="row">
                                     <div class="sp col-6 align-items-center"><span>HP</span></div> 
@@ -40,14 +40,9 @@
                             </div>    
                     </div>
                     <!-- Counter Attack Power-->
-                    <div class="row">
+                    <div class="row l">
                             <div class="container c ">
-<!--
-                               <div class="row">
-                                    <div class="head col-6 align-items-center">PLAYER</div> 
-                                    <div class="head col-6 align-items-center">ENEMY</div>     
-                                </div>
--->
+<!---->
                                 <div class="row">
                                     <div class="sp col-6 align-items-center"><span>CAP</span></div> 
                                     <div class="sp col-6 align-items-center"><span>CAP</span></div>     
@@ -59,7 +54,7 @@
                             </div>           
                     </div>
                     <!-- Attack Power-->
-                    <div class="row">
+                    <div class="row l">
                             <div class="container c ">
                                
                                 <div class="row">
@@ -72,14 +67,18 @@
                                 </div>
                             </div>    
                     </div>
+                    <div class="row fixed-top d-flex align-items-center">
+                       <div class="container"><button type="button" class="reset btn btn-danger" onclick="location.reload();">RESET GAME</button></div>
+                        
+                    </div>
                 </div>    
-
+            
             </div>
             <div class="col-10">
 <!--               characters area-->
                 <div id="chooseCha" class="row bg">
                         <div class="col-2 d-flex align-items-center">
-                            <span>Choose Character Area</span>
+                            <span class="area">Choose Character Area</span>
                         </div> 
 <!--                        character 1 -->
                         <div id="i0c" class="col-2 d-flex align-items-center">
@@ -104,14 +103,14 @@
 <!--                choose enemy area  -->
                 <div id="enemiesArea" class="row bg">
                        <div id="enemy" class="col-2 d-flex align-items-center">
-                            <span>Choose Enemy Area</span>
+                            <span class="area">Choose Enemy Area</span>
                        </div>
                            
                 </div>
 <!--                fighting area  -->
-                <div id="fightingArea" class="row bg" style="text-align: center">
+                <div id="fightingArea" class="row bg">
                         <div id="textF" class="col-2 d-flex align-items-center">
-                            <span>Fighting Area</span>
+                            <span class="area">Fighting Area</span>
                         </div> 
                 </div>
         </div>
@@ -119,15 +118,15 @@
     </div>
    
     
-    <!-- restart game modal-->
+    <!-- you lose  so restart game modal-->
     
     <div id="myModal" class="modal fade">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header ">
-            <h5 class="modal-title">YOU LOSE</h5>
+          <div class="modal-header d-flex align-items-center">
+            <h5 class="modal-title">YOU LOST</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">SORRY, YOU LOSE, TRY AGAIN</span>
+              <span aria-hidden="true">SORRY, YOU LOST, TRY AGAIN</span>
             </button>
           </div>
           <div class="modal-body">
@@ -135,6 +134,32 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" onclick="location.reload();">RESET GAME</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     <!-- you win so choose another enemy game modal-->
+    <script>
+        function closeModal(){
+            $('#myModalWin').modal('toggle');
+        }
+    </script>
+    
+    <div id="myModalWin" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <h5 class="modal-title">YOU WIN</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">NICE !!!, You won a battle, now win the war, select another enemy</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="image-fluid" src="assets/img/win.png">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="closeModal();">GO SELECT</button>
           </div>
         </div>
       </div>

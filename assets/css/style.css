@@ -139,3 +139,14 @@ html, body {
      font-weight: bold;       
 
 }
+
+
+.hov {
+    max-width: 125px !important;
+    max-height: 125px !important;
+}
+
+.hov:hover {
+    filter:sepia(100%);
+    cursor: pointer;
+}

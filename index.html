@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- anime css-->
     <link rel="stylesheet" href="assets/css/animate.css"> 
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
   </head>
   <body>
     
@@ -103,45 +103,47 @@
                 </div>
 <!--                choose enemy area  -->
                 <div id="enemiesArea" class="row bg">
-                       <div class="col-2 d-flex align-items-center">
+                       <div id="enemy" class="col-2 d-flex align-items-center">
                             <span>Choose Enemy Area</span>
-                       </div>      
+                       </div>
+                           
                 </div>
 <!--                fighting area  -->
                 <div id="fightingArea" class="row bg" style="text-align: center">
                         <div id="textF" class="col-2 d-flex align-items-center">
                             <span>Fighting Area</span>
                         </div> 
-                        
                 </div>
         </div>
     </div>
-    
+    </div>
    
     
-    <!-- choosed character modal-->
+    <!-- restart game modal-->
     
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">You have selected</span>
-                </button>
-              </div>
-       </div>
+          <div class="modal-header ">
+            <h5 class="modal-title">YOU LOSE</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">SORRY, YOU LOSE, TRY AGAIN</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="image-fluid" src="assets/img/spiderman-sad.jpg">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="location.reload();">RESET GAME</button>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-   <script src="http://code.jquery.com/jquery-1.12.4.js"
-        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-        crossorigin="anonymous"></script>
     
     <!-- jQuery first, then Tether, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> 
     <!-- my effects-->
     <!-- <script src="assets/js/forDesign.js"></script>    -->
     <!--     custom script-->
